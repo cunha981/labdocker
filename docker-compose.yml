@@ -2,12 +2,15 @@ version: "3"
 
 services:
   web:
-    image: "cunha981/myfirstapp:2.0"
+    build: .
+    #image: "cunha981/myfirstapp:2.0"
     networks:
       labdocker:
         ipv4_address: 172.20.0.2
     ports:
       - "80:80"
+    environment:
+      - MESSAGE=NOVA_MSG
 
   redis:
     image: redis
